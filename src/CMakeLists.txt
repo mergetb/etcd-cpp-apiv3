@@ -9,5 +9,32 @@ install (FILES ../etcd/Client.hpp
                ../etcd/Response.hpp
                ../etcd/Value.hpp
                ../etcd/Watcher.hpp
-               DESTINATION include/etcd)
+         DESTINATION include/etcd)
+
+install (FILES ../v3/include/Action.hpp
+               ../v3/include/AsyncCompareAndDeleteAction.hpp
+               ../v3/include/AsyncCompareAndSwapAction.hpp
+               ../v3/include/AsyncDeleteAction.hpp
+               ../v3/include/AsyncDeleteRangeResponse.hpp
+               ../v3/include/AsyncGetAction.hpp
+               ../v3/include/AsyncLeaseGrantAction.hpp
+               ../v3/include/AsyncLeaseGrantResponse.hpp
+               ../v3/include/AsyncRangeResponse.hpp
+               ../v3/include/AsyncSetAction.hpp
+               ../v3/include/AsyncTxnResponse.hpp
+               ../v3/include/AsyncUpdateAction.hpp
+               ../v3/include/AsyncWatchAction.hpp
+               ../v3/include/AsyncWatchResponse.hpp
+               ../v3/include/KeyValue.hpp
+               ../v3/include/Transaction.hpp
+               ../v3/include/V3Response.hpp
+               ../v3/include/action_constants.hpp
+         DESTINATION include/etcd/v3/include)
+
+install (FILES ../proto/auth.pb.h
+               ../proto/etcdserver.pb.h
+               ../proto/kv.pb.h
+               ../proto/rpc.grpc.pb.h
+               ../proto/rpc.pb.h
+         DESTINATION include/etcd/proto)
 
