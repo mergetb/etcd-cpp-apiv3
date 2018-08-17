@@ -64,7 +64,7 @@ also returns the ```etcd::Response``` object.
 
 ```c++
   etcd::Client etcd("http://127.0.0.1:4001");
-  pplx::task<etcd::Response> response_task = etcd.get("/test/key1").get();
+  pplx::task<etcd::Response> response_task = etcd.get("/test/key1");
   // ... do something else
   etcd::Response response = response_task.get();
   std::cout << response.value().as_string();
