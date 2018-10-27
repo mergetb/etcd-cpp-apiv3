@@ -19,7 +19,7 @@ set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -pthread")
 add_subdirectory(src)
 add_subdirectory(tst)
 
-set(VERSION "0.1.1")
+set(VERSION "0.2.1")
 set(CPACK_PACKAGE_VERSION ${VERSION})
 set(CPACK_GENERATOR "RPM")
 set(CPACK_PACKAGE_NAME "etcd_cpp_apiv3")
