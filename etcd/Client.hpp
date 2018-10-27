@@ -181,6 +181,12 @@ namespace etcd
      */
     pplx::task<Response> leasegrant(int ttl);
 
+    /**
+     * Keeps a lease alive.
+     * @param id is the id of the lease
+     */
+    pplx::task<Response> keepalive(int64_t id);
+
   private:
 
     std::unique_ptr<KV::Stub> stub_;

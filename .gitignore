@@ -1,3 +1,4 @@
 *.sw*
 *.pb.*
 build
+tags

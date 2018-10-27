@@ -16,6 +16,7 @@
 #include "v3/include/AsyncDeleteAction.hpp"
 #include "v3/include/AsyncWatchAction.hpp"
 #include "v3/include/AsyncLeaseGrantAction.hpp"
+#include "v3/include/AsyncKeepAliveAction.hpp"
 
 
 using grpc::Channel;
@@ -322,6 +323,15 @@ pplx::task<etcd::Response> etcd::Client::leasegrant(int ttl)
   params.ttl = ttl;
   params.lease_stub = leaseServiceStub.get();
   std::shared_ptr<etcdv3::AsyncLeaseGrantAction> call(new etcdv3::AsyncLeaseGrantAction(params));
+  return Response::create(call);
+}
+
+pplx::task<etcd::Response> etcd::Client::keepalive(int64_t id)
+{
+  etcdv3::ActionParameters params;
+  params.lease_id = id;
+  params.lease_stub = leaseServiceStub.get();
+  std::shared_ptr<etcdv3::AsyncKeepAliveAction> call(new etcdv3::AsyncKeepAliveAction(params));
   return Response::create(call);
 }
 

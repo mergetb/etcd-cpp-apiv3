@@ -12,6 +12,11 @@ etcdv3::AsyncWatchAction::AsyncWatchAction(etcdv3::ActionParameters param)
   isCancelled = false;
   stream = parameters.watch_stub->AsyncWatch(&context,&cq_,(void*)"create");
 
+  // wait for stream to become ready
+  void *got_tag;
+  bool ok{false};
+  cq_.Next(&got_tag, &ok);
+
   WatchRequest watch_req;
   WatchCreateRequest watch_create_req;
   watch_create_req.set_key(parameters.key);
