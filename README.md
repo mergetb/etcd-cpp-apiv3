@@ -348,5 +348,4 @@ Watch stream will be cancelled either by user implicitly calling Cancel() or whe
 
 ### TODO
 1. Cancellation of asynchronous calls(except for watch)
-2. LeaseKeepAlive
 
